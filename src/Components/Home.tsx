@@ -6,11 +6,10 @@ import CityButtons from './CityButtons';
 import CurrentWeather from './CurrentWeather';
 import LanguageButtons from './LanguageButtons';
 import ThemeButton from './ThemeButton';
+import WeatherForecast from './WeatherForecast';
 
 const Home = () => {
   const { t } = useTranslation();
-  const { weatherQuery } = useContext(AppStateContext);
-  console.log({ weatherQuery });
   return (
     <Container size="xl" pt="lg">
       <Group position="right">
@@ -22,6 +21,7 @@ const Home = () => {
       </Center>
       <CityButtons />
       <CurrentWeather />
+      <WeatherForecast />
     </Container>
   );
 };

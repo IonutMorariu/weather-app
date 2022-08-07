@@ -9,28 +9,17 @@ import {
 } from '@mantine/core';
 import { useContext } from 'react';
 import { AppStateContext } from '../AppStateContext';
+import WeatherCard from './WeatherCard';
 
 const CurrentWeather = () => {
-  const { weatherQuery, units } = useContext(AppStateContext);
+  const { currentWeatherQuery } = useContext(AppStateContext);
 
   return (
     <Container color="teal" size={300} py="lg">
-      {weatherQuery.isLoading ? (
+      {currentWeatherQuery.isLoading ? (
         <Loader />
       ) : (
-        <Card shadow="lg">
-          <Stack align="center" spacing="sm">
-            <Image
-              width={128}
-              src={`http://openweathermap.org/img/w/${weatherQuery.data.weather[0].icon}.png`}
-            />
-            <Title order={1}>
-              {Math.round(weatherQuery.data.main.temp)}º{' '}
-              {units === 'imperial' ? 'F' : 'C'}
-            </Title>
-            <Title order={3}>{weatherQuery.data.weather[0].description}</Title>
-          </Stack>
-        </Card>
+        <WeatherCard weatherData={currentWeatherQuery.data} />
       )}
     </Container>
   );

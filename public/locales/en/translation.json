@@ -2,5 +2,7 @@
   "WEATHER_TITLE": "What's the weather like in ...",
   "LONDON": "London",
   "TORONTO": "Toronto",
-  "SINGAPORE": "Singapore"
+  "SINGAPORE": "Singapore",
+  "AT": " at ",
+  "NEXT_FIVE_DAYS": "Next five days"
 }

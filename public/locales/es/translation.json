@@ -2,5 +2,7 @@
   "WEATHER_TITLE": "Qué tiempo hace en ...",
   "LONDON": "Londres",
   "TORONTO": "Toronto",
-  "SINGAPORE": "Singapur"
+  "SINGAPORE": "Singapur",
+  "AT": " a las ",
+  "NEXT_FIVE_DAYS": "Próximos cinco días"
 }
