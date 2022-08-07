@@ -2,7 +2,7 @@ import { MantineThemeOverride } from '@mantine/core';
 
 const theme: MantineThemeOverride = {
   fontFamily: 'Inter',
-  primaryColor: 'teal',
+  primaryColor: 'blue',
   components: {
     Container: {
       defaultProps: {

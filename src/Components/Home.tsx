@@ -1,5 +1,6 @@
-import { Container, Group } from '@mantine/core';
+import { Center, Container, Group } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
+import CityButtons from './CityButtons';
 import LanguageButtons from './LanguageButtons';
 import ThemeButton from './ThemeButton';
 
@@ -11,7 +12,10 @@ const Home = () => {
         <ThemeButton />
         <LanguageButtons />
       </Group>
-      <h1>{t('WEATHER')}</h1>
+      <Center>
+        <h1>{t('WEATHER_TITLE')}</h1>
+      </Center>
+      <CityButtons />
     </Container>
   );
 };

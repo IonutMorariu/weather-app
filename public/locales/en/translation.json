@@ -1,3 +1,6 @@
 {
-  "WEATHER": "Weather"
+  "WEATHER_TITLE": "What's the weather like in ...",
+  "LONDON": "London",
+  "TORONTO": "Toronto",
+  "SINGAPORE": "Singapore"
 }

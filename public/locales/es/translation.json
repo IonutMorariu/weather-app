@@ -1,3 +1,6 @@
 {
-  "WEATHER": "Tiempo"
+  "WEATHER_TITLE": "Qué tiempo hace en ...",
+  "LONDON": "Londres",
+  "TORONTO": "Toronto",
+  "SINGAPORE": "Singapur"
 }

@@ -8,6 +8,7 @@ import Home from './Components/Home';
 import theme from './theme';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { AppStateContext, AppStateProvider } from './AppStateContext';
 
 // Create a client
 const queryClient = new QueryClient();
@@ -20,18 +21,20 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ColorSchemeProvider
-        colorScheme={colorScheme}
-        toggleColorScheme={toggleColorScheme}
-      >
-        <MantineProvider
-          theme={{ colorScheme, ...theme }}
-          withNormalizeCSS
-          withGlobalStyles
+      <AppStateProvider>
+        <ColorSchemeProvider
+          colorScheme={colorScheme}
+          toggleColorScheme={toggleColorScheme}
         >
-          <Home />
-        </MantineProvider>
-      </ColorSchemeProvider>
+          <MantineProvider
+            theme={{ colorScheme, ...theme }}
+            withNormalizeCSS
+            withGlobalStyles
+          >
+            <Home />
+          </MantineProvider>
+        </ColorSchemeProvider>
+      </AppStateProvider>
     </QueryClientProvider>
   );
 }
