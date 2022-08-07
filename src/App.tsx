@@ -4,30 +4,35 @@ import {
   MantineProvider,
 } from '@mantine/core';
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import Home from './Components/Home';
 import theme from './theme';
 
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+// Create a client
+const queryClient = new QueryClient();
+
 function App() {
-  const { t } = useTranslation();
   const [colorScheme, setColorScheme] = useState<ColorScheme>('dark');
 
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
 
   return (
-    <ColorSchemeProvider
-      colorScheme={colorScheme}
-      toggleColorScheme={toggleColorScheme}
-    >
-      <MantineProvider
-        theme={{ colorScheme, ...theme }}
-        withNormalizeCSS
-        withGlobalStyles
+    <QueryClientProvider client={queryClient}>
+      <ColorSchemeProvider
+        colorScheme={colorScheme}
+        toggleColorScheme={toggleColorScheme}
       >
-        <Home />
-      </MantineProvider>
-    </ColorSchemeProvider>
+        <MantineProvider
+          theme={{ colorScheme, ...theme }}
+          withNormalizeCSS
+          withGlobalStyles
+        >
+          <Home />
+        </MantineProvider>
+      </ColorSchemeProvider>
+    </QueryClientProvider>
   );
 }
 
