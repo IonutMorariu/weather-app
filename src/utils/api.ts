@@ -1,6 +1,6 @@
 import CitiesEnum from './CitiesEnum';
 
-const API_KEY = '0d15a3289912e0a290a4d554f532108e';
+const API_KEY = 'API_KEY';
 
 const CURRENT_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather';
 const FORECAST_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/forecast';
